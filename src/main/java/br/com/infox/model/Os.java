@@ -42,9 +42,10 @@ public class Os implements Serializable {
     @Column(name = "VALOR", scale = 2, precision = 10)
     private BigDecimal valor;
 
-    /*@ManyToOne
+
+    @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "IDCLIENTE"))
-    private Long idCliente; */
+    private Cliente cliente;
 
 
 

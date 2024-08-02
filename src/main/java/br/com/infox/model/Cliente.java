@@ -32,4 +32,6 @@ public class Cliente  implements Serializable {
     @Column(name="MAILCLI", length=30)
     private String emailCliente;
 
+
+
 }
