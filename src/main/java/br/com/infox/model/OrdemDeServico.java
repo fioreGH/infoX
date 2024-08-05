@@ -5,12 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.Reference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.security.PrivilegedAction;
 import java.time.LocalDateTime;
 
 @Getter
@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(name = "os_seq", sequenceName = "os_seq", initialValue = 1, allocationSize = 1)
-public class Os implements Serializable {
+public class OrdemDeServico implements Serializable {
 
     private static final long serialVersion= 1L;
 
@@ -46,8 +46,6 @@ public class Os implements Serializable {
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "IDCLIENTE"))
     private Cliente cliente;
-
-
 
 
 }

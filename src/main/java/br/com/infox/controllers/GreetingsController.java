@@ -1,8 +1,10 @@
 package br.com.infox.controllers;
 
 import br.com.infox.model.Cliente;
+import br.com.infox.model.OrdemDeServico;
 import br.com.infox.model.Usuario;
 import br.com.infox.repository.ClienteRepository;
+import br.com.infox.repository.OrdemDeServicoRepository;
 import br.com.infox.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,6 +53,29 @@ public class GreetingsController {
         Cliente novoCliente = clienteRepository.save(cliente);
 
         return new ResponseEntity<Cliente>(novoCliente, HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "listarclientes")
+    @ResponseBody
+    public ResponseEntity<List<Cliente>> listarClientes(){
+
+        List<Cliente> clientes = clienteRepository.findAll();
+
+        return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+
+    }
+
+    @Autowired
+    private OrdemDeServicoRepository ordemDeServicoRepository;
+
+    @PostMapping(value = "salvar_os")
+    @ResponseBody
+    public ResponseEntity<OrdemDeServico> salvarOS(@RequestBody OrdemDeServico ordemDeServico){
+
+        OrdemDeServico novaOrdemDeServicos = ordemDeServicoRepository.save(ordemDeServico);
+
+        return new ResponseEntity<OrdemDeServico>(novaOrdemDeServicos, HttpStatus.CREATED);
+
     }
 
 }

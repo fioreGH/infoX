@@ -12,7 +12,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="USUARIO", uniqueConstraints= @UniqueConstraint(columnNames={"login"}))
+@Table(name="USUARIO", uniqueConstraints= @UniqueConstraint(columnNames={"LOGIN"}))
 @SequenceGenerator(name = "seq_usuario", sequenceName = "seq_usuario", allocationSize = 1,initialValue = 1)
 public class Usuario implements Serializable {
 
@@ -31,6 +31,6 @@ public class Usuario implements Serializable {
     @Column(name="LOGIN", nullable=false, length=15)
     private String loginUsuario;
 
-    @Column(name="PASSW", nullable=false, length=15)
+    @Column(name="SENHA", nullable=false, length=15)
     private String senhaUsuario;
 }
