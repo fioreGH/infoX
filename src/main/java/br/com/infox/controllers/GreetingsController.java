@@ -1,6 +1,8 @@
 package br.com.infox.controllers;
 
+import br.com.infox.model.Cliente;
 import br.com.infox.model.Usuario;
+import br.com.infox.repository.ClienteRepository;
 import br.com.infox.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,6 +39,18 @@ public class GreetingsController {
 
         return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
 
+    }
+
+    @Autowired
+    private ClienteRepository clienteRepository;
+
+    @PostMapping(value = "salvarcliente")
+    @ResponseBody
+    public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente){
+
+        Cliente novoCliente = clienteRepository.save(cliente);
+
+        return new ResponseEntity<Cliente>(novoCliente, HttpStatus.CREATED);
     }
 
 }

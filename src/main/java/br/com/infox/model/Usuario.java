@@ -20,17 +20,17 @@ public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
-    private Long iduser;
+    private Long idUsuario;
 
     @Column(name="USUARIO", nullable=false, length=50)
-    private String usuario;
+    private String nomeUsuario;
 
     @Column(name="FONE", length=15)
-    private String fone;
+    private String foneUsuario;
 
     @Column(name="LOGIN", nullable=false, length=15)
-    private String login;
+    private String loginUsuario;
 
     @Column(name="PASSW", nullable=false, length=15)
-    private String senha;
+    private String senhaUsuario;
 }
