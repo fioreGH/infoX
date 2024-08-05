@@ -23,10 +23,10 @@ public class Cliente  implements Serializable {
     @Column(name="NAMECLI", nullable=false, length=50)
     private String nomeCliente;
 
-    @Column(name="PHONECLI", nullable=false, length=15)
+    @Column(name="FONECLI", nullable=false, length=15)
     private String foneCliente;
 
-    @Column(name="ADRESSCLI", length=100)
+    @Column(name="ENDCLI", length=100)
     private String enderecoCliente;
 
     @Column(name="MAILCLI", length=30)

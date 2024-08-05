@@ -25,7 +25,7 @@ public class Os implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "os_seq")
-    private Float ordemDeServico;
+    private Long ordemDeServico;
 
     @CreationTimestamp
     private LocalDateTime createdDateTime;
@@ -42,7 +42,7 @@ public class Os implements Serializable {
     @Column(name = "VALOR", scale = 2, precision = 10)
     private BigDecimal valor;
 
-
+    @NotNull
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "IDCLIENTE"))
     private Cliente cliente;
